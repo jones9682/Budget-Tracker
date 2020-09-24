@@ -1,12 +1,17 @@
+const CACHE_NAME = "static-cache-v2";
+const DATA_CACHE_NAME = "data-cache-v1";
+const iconSizes = ["144", "192", "512"];
+const iconFiles = iconSizes.map(
+    (size) => `/icons/icon-${size}x${size}.png`
+);
+
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
     "index.js",
+    "favicon.ico",
     "/styles.css",
-];
-
-const CACHE_NAME = "static-cache-v2";
-const DATA_CACHE_NAME = "data-cache-v1";
+].concat(iconFiles);
 
 // install
 self.addEventListener("install", function (evt) {
